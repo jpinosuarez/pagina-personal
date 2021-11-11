@@ -1,6 +1,11 @@
-/* media query para mobile */
 body {
     font-family: 'Quicksand', sans-serif;
+    display: grid;
+    grid-template-areas:
+    'header'
+    'main'
+    'footer'
+    ;
 }
 
 h1 {
@@ -13,6 +18,7 @@ h1 {
     height: 100vh;
     background-image: url("../public/img/background.svg");
     position: relative;
+    grid-area: header;
 }
 
 #header-index {
@@ -20,6 +26,14 @@ h1 {
     display: flex;
     flex-flow: column wrap;
     justify-content: space-between;
+}
+
+main {
+    grid-area: main;
+}
+
+footer {
+    grid-area: footer;
 }
 
 nav {
@@ -85,7 +99,7 @@ nav ul li a:visited {
 
 }
 /* =========================== */
-
+/* transiciones hover nav */
 a {
     color: #fff;
     text-transform: uppercase;
@@ -110,4 +124,42 @@ a:after {
 }
 a:hover:after { 
     width: 100%; 
-    left: 0; 
+    left: 0;
+}
+/* ======================= */
+
+#sobre-mi {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+
+#foto-perfil {
+    width: 300px;
+    height: auto;
+    border-radius: 50%;
+}
+
+h2 {
+    text-align: center;
+}
+
+#parrafo {
+    width: 50%;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+
+#ver-mas a {
+    font-weight: 700;
+    color: black;
+    transition: .2s ease-in-out;
+}
+
+#ver-mas a:hover {
+    transform: scale(1.1);
+}
